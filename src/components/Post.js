@@ -2,21 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 export default class Post extends Component {
-  state = {
-    post: null,
-  }
-
-  componentDidMount() {
-    let id = this.props.match.params.postId;
-    axios
-      .get(`https://jsonplaceholder.typicode.com/posts/${id}`)
-      .then(resp => {
-        this.setState({
-          post: resp.data,
-        })
-        console.log(resp);
-      })
-  }
+  state = { post: null };
 
   render() {
     const post = this.state.post ? (
